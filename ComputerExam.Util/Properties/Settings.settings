@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ComputerExam.Util.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ComputerExam_Util_WebReference_ReJobDataHandler" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.199.190/CD/ReJobDataHandler.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

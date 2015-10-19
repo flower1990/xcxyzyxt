@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="StudentLoginValidate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InStudentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExamineeName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StudentLoginValidateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StudentLoginValidateResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExamineeName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MySoapHeader" type="tns:MySoapHeader" />
+      <s:complexType name="MySoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="TeacherLoginValidate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeacherLoginValidateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TeacherLoginValidateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExamSubjectData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InStudentCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExamSubjectDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExamSubjectDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyJobData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InStudentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InStartTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InEndTime" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="InDataType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyJobDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMyJobDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyJobScore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InStudentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InStartTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InEndTime" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="InDataType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyJobScoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMyJobScoreResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyJobDetailScore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InStudentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InHWID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="InDataType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyJobDetailScoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMyJobDetailScoreResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyStudyFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InStudentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InStartTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InEndTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyStudyFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMyStudyFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMyJobScore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InStudentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InHWID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InXmlScore" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMyJobScoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateMyJobScoreResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecPractiseInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InRecType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="InStudentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InHWID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecPractiseInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecPractiseInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLoginOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InStudentCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLoginOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateLoginOutResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTopicDBScore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InStudentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InXmlScore" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTopicDBScoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateTopicDBScoreResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartTraining">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartTrainingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EndTraining">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EndTrainingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopicDBList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TopicDBName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TopicDBCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InStartTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InEndTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopicDBListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopicDBListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="StudentLoginValidateSoapIn">
+    <wsdl:part name="parameters" element="tns:StudentLoginValidate" />
+  </wsdl:message>
+  <wsdl:message name="StudentLoginValidateSoapOut">
+    <wsdl:part name="parameters" element="tns:StudentLoginValidateResponse" />
+  </wsdl:message>
+  <wsdl:message name="StudentLoginValidateMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="TeacherLoginValidateSoapIn">
+    <wsdl:part name="parameters" element="tns:TeacherLoginValidate" />
+  </wsdl:message>
+  <wsdl:message name="TeacherLoginValidateSoapOut">
+    <wsdl:part name="parameters" element="tns:TeacherLoginValidateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TeacherLoginValidateMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetExamSubjectDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExamSubjectData" />
+  </wsdl:message>
+  <wsdl:message name="GetExamSubjectDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExamSubjectDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExamSubjectDataMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMyJobDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMyJobData" />
+  </wsdl:message>
+  <wsdl:message name="GetMyJobDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMyJobDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMyJobDataMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMyJobScoreSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMyJobScore" />
+  </wsdl:message>
+  <wsdl:message name="GetMyJobScoreSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMyJobScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMyJobScoreMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMyJobDetailScoreSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMyJobDetailScore" />
+  </wsdl:message>
+  <wsdl:message name="GetMyJobDetailScoreSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMyJobDetailScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMyJobDetailScoreMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMyStudyFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMyStudyFile" />
+  </wsdl:message>
+  <wsdl:message name="GetMyStudyFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMyStudyFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMyStudyFileMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMyJobScoreSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMyJobScore" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMyJobScoreSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMyJobScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMyJobScoreMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="RecPractiseInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:RecPractiseInfo" />
+  </wsdl:message>
+  <wsdl:message name="RecPractiseInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:RecPractiseInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecPractiseInfoMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLoginOutSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateLoginOut" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLoginOutSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateLoginOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLoginOutMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTopicDBScoreSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTopicDBScore" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTopicDBScoreSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTopicDBScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTopicDBScoreMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="StartTrainingSoapIn">
+    <wsdl:part name="parameters" element="tns:StartTraining" />
+  </wsdl:message>
+  <wsdl:message name="StartTrainingSoapOut">
+    <wsdl:part name="parameters" element="tns:StartTrainingResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartTrainingMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="EndTrainingSoapIn">
+    <wsdl:part name="parameters" element="tns:EndTraining" />
+  </wsdl:message>
+  <wsdl:message name="EndTrainingSoapOut">
+    <wsdl:part name="parameters" element="tns:EndTrainingResponse" />
+  </wsdl:message>
+  <wsdl:message name="EndTrainingMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTopicDBListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopicDBList" />
+  </wsdl:message>
+  <wsdl:message name="GetTopicDBListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopicDBListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopicDBListMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="ReJobDataHandlerSoap">
+    <wsdl:operation name="StudentLoginValidate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">返回学生登录是否成功   1：登录成功 2:学生不存在 3：密码错误 4:学生未审核通过  5:数据库连接错误</wsdl:documentation>
+      <wsdl:input message="tns:StudentLoginValidateSoapIn" />
+      <wsdl:output message="tns:StudentLoginValidateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TeacherLoginValidate">
+      <wsdl:input message="tns:TeacherLoginValidateSoapIn" />
+      <wsdl:output message="tns:TeacherLoginValidateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExamSubjectData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">返回学生科目数据</wsdl:documentation>
+      <wsdl:input message="tns:GetExamSubjectDataSoapIn" />
+      <wsdl:output message="tns:GetExamSubjectDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyJobData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">返回学生作业数据</wsdl:documentation>
+      <wsdl:input message="tns:GetMyJobDataSoapIn" />
+      <wsdl:output message="tns:GetMyJobDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyJobScore">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">返回学生作业成绩数据</wsdl:documentation>
+      <wsdl:input message="tns:GetMyJobScoreSoapIn" />
+      <wsdl:output message="tns:GetMyJobScoreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyJobDetailScore">
+      <wsdl:input message="tns:GetMyJobDetailScoreSoapIn" />
+      <wsdl:output message="tns:GetMyJobDetailScoreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyStudyFile">
+      <wsdl:input message="tns:GetMyStudyFileSoapIn" />
+      <wsdl:output message="tns:GetMyStudyFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMyJobScore">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">提交我的作业成绩上服务器</wsdl:documentation>
+      <wsdl:input message="tns:UpdateMyJobScoreSoapIn" />
+      <wsdl:output message="tns:UpdateMyJobScoreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecPractiseInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">记录答题开始和结束时间</wsdl:documentation>
+      <wsdl:input message="tns:RecPractiseInfoSoapIn" />
+      <wsdl:output message="tns:RecPractiseInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoginOut">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">退出</wsdl:documentation>
+      <wsdl:input message="tns:UpdateLoginOutSoapIn" />
+      <wsdl:output message="tns:UpdateLoginOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTopicDBScore">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">提交我的题库练习成绩上服务器</wsdl:documentation>
+      <wsdl:input message="tns:UpdateTopicDBScoreSoapIn" />
+      <wsdl:output message="tns:UpdateTopicDBScoreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartTraining">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">开始练习</wsdl:documentation>
+      <wsdl:input message="tns:StartTrainingSoapIn" />
+      <wsdl:output message="tns:StartTrainingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EndTraining">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">结束练习</wsdl:documentation>
+      <wsdl:input message="tns:EndTrainingSoapIn" />
+      <wsdl:output message="tns:EndTrainingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopicDBList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">返回题库数据</wsdl:documentation>
+      <wsdl:input message="tns:GetTopicDBListSoapIn" />
+      <wsdl:output message="tns:GetTopicDBListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ReJobDataHandlerSoap" type="tns:ReJobDataHandlerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="StudentLoginValidate">
+      <soap:operation soapAction="http://tempuri.org/StudentLoginValidate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StudentLoginValidateMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeacherLoginValidate">
+      <soap:operation soapAction="http://tempuri.org/TeacherLoginValidate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TeacherLoginValidateMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExamSubjectData">
+      <soap:operation soapAction="http://tempuri.org/GetExamSubjectData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetExamSubjectDataMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyJobData">
+      <soap:operation soapAction="http://tempuri.org/GetMyJobData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMyJobDataMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyJobScore">
+      <soap:operation soapAction="http://tempuri.org/GetMyJobScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMyJobScoreMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyJobDetailScore">
+      <soap:operation soapAction="http://tempuri.org/GetMyJobDetailScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMyJobDetailScoreMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyStudyFile">
+      <soap:operation soapAction="http://tempuri.org/GetMyStudyFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMyStudyFileMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMyJobScore">
+      <soap:operation soapAction="http://tempuri.org/UpdateMyJobScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateMyJobScoreMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecPractiseInfo">
+      <soap:operation soapAction="http://tempuri.org/RecPractiseInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecPractiseInfoMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoginOut">
+      <soap:operation soapAction="http://tempuri.org/UpdateLoginOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateLoginOutMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTopicDBScore">
+      <soap:operation soapAction="http://tempuri.org/UpdateTopicDBScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateTopicDBScoreMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartTraining">
+      <soap:operation soapAction="http://tempuri.org/StartTraining" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StartTrainingMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndTraining">
+      <soap:operation soapAction="http://tempuri.org/EndTraining" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EndTrainingMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopicDBList">
+      <soap:operation soapAction="http://tempuri.org/GetTopicDBList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTopicDBListMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ReJobDataHandlerSoap12" type="tns:ReJobDataHandlerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="StudentLoginValidate">
+      <soap12:operation soapAction="http://tempuri.org/StudentLoginValidate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StudentLoginValidateMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeacherLoginValidate">
+      <soap12:operation soapAction="http://tempuri.org/TeacherLoginValidate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TeacherLoginValidateMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExamSubjectData">
+      <soap12:operation soapAction="http://tempuri.org/GetExamSubjectData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetExamSubjectDataMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyJobData">
+      <soap12:operation soapAction="http://tempuri.org/GetMyJobData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMyJobDataMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyJobScore">
+      <soap12:operation soapAction="http://tempuri.org/GetMyJobScore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMyJobScoreMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyJobDetailScore">
+      <soap12:operation soapAction="http://tempuri.org/GetMyJobDetailScore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMyJobDetailScoreMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyStudyFile">
+      <soap12:operation soapAction="http://tempuri.org/GetMyStudyFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMyStudyFileMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMyJobScore">
+      <soap12:operation soapAction="http://tempuri.org/UpdateMyJobScore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateMyJobScoreMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecPractiseInfo">
+      <soap12:operation soapAction="http://tempuri.org/RecPractiseInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecPractiseInfoMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoginOut">
+      <soap12:operation soapAction="http://tempuri.org/UpdateLoginOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateLoginOutMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTopicDBScore">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTopicDBScore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateTopicDBScoreMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartTraining">
+      <soap12:operation soapAction="http://tempuri.org/StartTraining" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StartTrainingMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndTraining">
+      <soap12:operation soapAction="http://tempuri.org/EndTraining" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EndTrainingMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopicDBList">
+      <soap12:operation soapAction="http://tempuri.org/GetTopicDBList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTopicDBListMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReJobDataHandler">
+    <wsdl:port name="ReJobDataHandlerSoap" binding="tns:ReJobDataHandlerSoap">
+      <soap:address location="http://192.168.199.190/CD/ReJobDataHandler.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ReJobDataHandlerSoap12" binding="tns:ReJobDataHandlerSoap12">
+      <soap12:address location="http://192.168.199.190/CD/ReJobDataHandler.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

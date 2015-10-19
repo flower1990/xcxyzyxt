@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7879DD03-FE31-4D93-A706-8C6D4A3AAC86}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ComputerExam</RootNamespace>
+    <AssemblyName>ComputerExam</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\icon\icon_homework2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Common\Sower\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusicWork\frmAddTopicDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusicWork\frmAddTopicDB.Designer.cs">
+      <DependentUpon>frmAddTopicDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusicWork\frmBusicWorkMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusicWork\frmBusicWorkMain.Designer.cs">
+      <DependentUpon>frmBusicWorkMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusicWork\frmDownLoadTopicDb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusicWork\frmDownLoadTopicDb.Designer.cs">
+      <DependentUpon>frmDownLoadTopicDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusicWork\frmDownTopicDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusicWork\frmDownTopicDB.Designer.cs">
+      <DependentUpon>frmDownTopicDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusicWork\frmDownWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusicWork\frmDownWork.Designer.cs">
+      <DependentUpon>frmDownWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusicWork\frmExercise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusicWork\frmExercise.Designer.cs">
+      <DependentUpon>frmExercise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusicWork\frmExerciseBrowse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusicWork\frmExerciseBrowse.Designer.cs">
+      <DependentUpon>frmExerciseBrowse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusicWork\frmExerciseScoreDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusicWork\frmExerciseScoreDetail.Designer.cs">
+      <DependentUpon>frmExerciseScoreDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusicWork\frmHomeWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusicWork\frmHomeWork.Designer.cs">
+      <DependentUpon>frmHomeWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusicWork\frmStatisticalAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusicWork\frmStatisticalAnalysis.Designer.cs">
+      <DependentUpon>frmStatisticalAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusicWork\frmWorkBrowse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusicWork\frmWorkBrowse.Designer.cs">
+      <DependentUpon>frmWorkBrowse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusicWork\frmWorkScoreDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusicWork\frmWorkScoreDetail.Designer.cs">
+      <DependentUpon>frmWorkScoreDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\BackgroundPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\BindingCollection.cs" />
+    <Compile Include="Common\CommonUtil.cs" />
+    <Compile Include="Common\CommonConst.cs" />
+    <Compile Include="Common\FrmProcessing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\FrmProcessing.Designer.cs">
+      <DependentUpon>FrmProcessing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\ListUtil.cs" />
+    <Compile Include="Common\MyOpaqueLayer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\ObjectPropertyCompare.cs" />
+    <Compile Include="Common\OpaqueCommand.cs" />
+    <Compile Include="CustomControl\CustomRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\frmAnswerSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\frmAnswerSheet.Designer.cs">
+      <DependentUpon>frmAnswerSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamPaper\frmHandPager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\frmHandPager.Designer.cs">
+      <DependentUpon>frmHandPager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmAnLiFenXi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmAnLiFenXi.Designer.cs">
+      <DependentUpon>frmAnLiFenXi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmDuoXuanTi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmDuoXuanTi.Designer.cs">
+      <DependentUpon>frmDuoXuanTi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmDanXuanTi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmDanXuanTi.Designer.cs">
+      <DependentUpon>frmDanXuanTi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamPaper\frmExamScoreDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\frmExamScoreDetail.Designer.cs">
+      <DependentUpon>frmExamScoreDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmFenLuBianJi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmFenLuBianJi.Designer.cs">
+      <DependentUpon>frmFenLuBianJi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmJiSuanFenXi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmJiSuanFenXi.Designer.cs">
+      <DependentUpon>frmJiSuanFenXi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmPanDuanTi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmPanDuanTi.Designer.cs">
+      <DependentUpon>frmPanDuanTi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamPaper\frmPingXi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\frmPingXi.Designer.cs">
+      <DependentUpon>frmPingXi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamPaper\frmScoreDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\frmScoreDetail.Designer.cs">
+      <DependentUpon>frmScoreDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmTianKongTi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmTianKongTi.Designer.cs">
+      <DependentUpon>frmTianKongTi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmTyping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmTyping.Designer.cs">
+      <DependentUpon>frmTyping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamPaper\frmWatting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\frmWatting.Designer.cs">
+      <DependentUpon>frmWatting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmZhuGuanTi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\TopicType\frmZhuGuanTi.Designer.cs">
+      <DependentUpon>frmZhuGuanTi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StepWizard\frmLoadPaper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StepWizard\frmLoadPaper.Designer.cs">
+      <DependentUpon>frmLoadPaper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StepWizard\frmExamInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StepWizard\frmExamInfo.Designer.cs">
+      <DependentUpon>frmExamInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StepWizard\frmSetServiceAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StepWizard\frmSetServiceAddress.Designer.cs">
+      <DependentUpon>frmSetServiceAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StepWizard\frmSqlConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StepWizard\frmSqlConfig.Designer.cs">
+      <DependentUpon>frmSqlConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StepWizard\frmValStuInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StepWizard\frmValStuInfo.Designer.cs">
+      <DependentUpon>frmValStuInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StepWizard\frmStudentLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StepWizard\frmStudentLogin.Designer.cs">
+      <DependentUpon>frmStudentLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StepWizard\frmExamSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StepWizard\frmExamSubject.Designer.cs">
+      <DependentUpon>frmExamSubject.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BusicWork\frmAddTopicDB.resx">
+      <DependentUpon>frmAddTopicDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusicWork\frmBusicWorkMain.resx">
+      <DependentUpon>frmBusicWorkMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusicWork\frmDownLoadTopicDb.resx">
+      <DependentUpon>frmDownLoadTopicDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusicWork\frmDownTopicDB.resx">
+      <DependentUpon>frmDownTopicDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusicWork\frmDownWork.resx">
+      <DependentUpon>frmDownWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusicWork\frmExercise.resx">
+      <DependentUpon>frmExercise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusicWork\frmExerciseBrowse.resx">
+      <DependentUpon>frmExerciseBrowse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusicWork\frmExerciseScoreDetail.resx">
+      <DependentUpon>frmExerciseScoreDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusicWork\frmHomeWork.resx">
+      <DependentUpon>frmHomeWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusicWork\frmStatisticalAnalysis.resx">
+      <DependentUpon>frmStatisticalAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusicWork\frmWorkBrowse.resx">
+      <DependentUpon>frmWorkBrowse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusicWork\frmWorkScoreDetail.resx">
+      <DependentUpon>frmWorkScoreDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\FrmProcessing.resx">
+      <DependentUpon>FrmProcessing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamPaper\frmAnswerSheet.resx">
+      <DependentUpon>frmAnswerSheet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamPaper\frmHandPager.resx">
+      <DependentUpon>frmHandPager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamPaper\TopicType\frmAnLiFenXi.resx">
+      <DependentUpon>frmAnLiFenXi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamPaper\TopicType\frmDuoXuanTi.resx">
+      <DependentUpon>frmDuoXuanTi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamPaper\TopicType\frmDanXuanTi.resx">
+      <DependentUpon>frmDanXuanTi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamPaper\frmExamScoreDetail.resx">
+      <DependentUpon>frmExamScoreDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamPaper\TopicType\frmFenLuBianJi.resx">
+      <DependentUpon>frmFenLuBianJi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamPaper\TopicType\frmJiSuanFenXi.resx">
+      <DependentUpon>frmJiSuanFenXi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamPaper\TopicType\frmPanDuanTi.resx">
+      <DependentUpon>frmPanDuanTi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamPaper\frmPingXi.resx">
+      <DependentUpon>frmPingXi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamPaper\frmScoreDetail.resx">
+      <DependentUpon>frmScoreDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamPaper\TopicType\frmTianKongTi.resx">
+      <DependentUpon>frmTianKongTi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamPaper\TopicType\frmTyping.resx">
+      <DependentUpon>frmTyping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamPaper\frmWatting.resx">
+      <DependentUpon>frmWatting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamPaper\TopicType\frmZhuGuanTi.resx">
+      <DependentUpon>frmZhuGuanTi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="StepWizard\frmLoadPaper.resx">
+      <DependentUpon>frmLoadPaper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StepWizard\frmExamInfo.resx">
+      <DependentUpon>frmExamInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StepWizard\frmSetServiceAddress.resx">
+      <DependentUpon>frmSetServiceAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StepWizard\frmSqlConfig.resx">
+      <DependentUpon>frmSqlConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StepWizard\frmValStuInfo.resx">
+      <DependentUpon>frmValStuInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StepWizard\frmStudentLogin.resx">
+      <DependentUpon>frmStudentLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StepWizard\frmExamSubject.resx">
+      <DependentUpon>frmExamSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Common\XMLFile1.xml" />
+    <Content Include="Images\background\bg_color.jpg" />
+    <Content Include="Images\background\bg_exam.jpg" />
+    <Content Include="Images\background\bg_exam1.jpg" />
+    <Content Include="Images\background\bg_exam_info.jpg" />
+    <Content Include="Images\background\bg_exam_info1.jpg" />
+    <Content Include="Images\background\bg_login.jpg" />
+    <Content Include="Images\background\bg_title.jpg" />
+    <Content Include="Images\background\common_bg.jpg" />
+    <Content Include="Images\background\form_changepc.jpg" />
+    <Content Include="Images\background\form_guide.jpg" />
+    <Content Include="Images\background\form_loading.jpg" />
+    <Content Include="Images\background\form_plugin.jpg" />
+    <Content Include="Images\background\form_readme.jpg" />
+    <Content Include="Images\background\form_score.jpg" />
+    <Content Include="Images\background\form_second.jpg" />
+    <Content Include="Images\background\form_selectpaper.jpg" />
+    <Content Include="Images\background\form_sqlcfg.jpg" />
+    <Content Include="Images\background\form_waiting.jpg" />
+    <Content Include="Images\background\bg_login.png" />
+    <Content Include="Images\background\form_waiting1.jpg" />
+    <Content Include="Images\background\背景1.jpg" />
+    <Content Include="Images\background\bg_ServiceAddress.png" />
+    <Content Include="Images\button\arrow_off.gif" />
+    <Content Include="Images\button\arrow_on.gif" />
+    <Content Include="Images\button\button_disk.gif" />
+    <Content Include="Images\button\button_door_in.gif" />
+    <Content Include="Images\button\button_handpage.png" />
+    <Content Include="Images\button\button_login.png" />
+    <Content Include="Images\button\button_exit.png" />
+    <Content Include="Images\button\button_ok.png" />
+    <Content Include="Images\button\button_test.png" />
+    <Content Include="Images\button\学习资料.png" />
+    <Content Include="Images\button\已下载的作业.png" />
+    <Content Include="Images\button\强化练习.png" />
+    <Content Include="Images\button\成绩浏览.png" />
+    <Content Include="Images\button\我的作业.png" />
+    <Content Include="Images\button\退出.png" />
+    <Content Include="Images\button\附加功能.png" />
+    <Content Include="Images\common\common_button.jpg" />
+    <Content Include="Images\button\outlook-tree-suboff.gif" />
+    <Content Include="Images\button\outlook-tree-subon.gif" />
+    <Content Include="Images\common\common_button1.jpg" />
+    <Content Include="Images\common\common_database.png" />
+    <Content Include="Images\icon\btn_off.gif" />
+    <Content Include="Images\icon\btn_on.gif" />
+    <Content Include="Images\icon\btn_close.png" />
+    <Content Include="Images\icon\icon_homework.png" />
+    <Content Include="Images\icon\icon_homework1.png" />
+    <Content Include="Images\icon\icon_homework2.ico" />
+    <Content Include="Images\icon\icon_photo.jpg" />
+    <Content Include="Images\icon\icon_questions.jpg" />
+    <Content Include="Images\icon\icon_student.jpg" />
+    <None Include="Resources\check_error.jpg" />
+    <None Include="Resources\check_right.jpg" />
+    <None Include="Resources\check_right.gif" />
+    <None Include="Resources\check_error.gif" />
+    <None Include="Resources\check_right_32px_515680_easyicon.net.png" />
+    <None Include="Resources\loding.gif" />
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ComputerExam.BLL\ComputerExam.BLL.csproj">
+      <Project>{89575520-02da-4db8-8bc6-1f91e4b07616}</Project>
+      <Name>ComputerExam.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ComputerExam.Model\ComputerExam.Model.csproj">
+      <Project>{fe7dac42-7a1d-4913-8538-140c46e8e7c8}</Project>
+      <Name>ComputerExam.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ComputerExam.Util\ComputerExam.Util.csproj">
+      <Project>{05c052ab-c8e8-40b7-ab92-b290add1347e}</Project>
+      <Name>ComputerExam.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxSowerRichText">
+      <Guid>{B0D5A9A0-6874-4696-8243-60E2DC3BE0A5}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="CBTESv7HWRichClientAddin">
+      <Guid>{89D16ED1-928E-4A51-8364-AEDC47069525}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MakePaperEXWithPaperCode">
+      <Guid>{29A71FC1-0AFA-4A96-8E78-38686F39C55F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SowerRichText">
+      <Guid>{B0D5A9A0-6874-4696-8243-60E2DC3BE0A5}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
