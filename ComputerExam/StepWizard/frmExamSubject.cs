@@ -78,6 +78,9 @@ namespace ComputerExam.StepWizard
             btnNextStep.Enabled = false;
             cboSubject.Enabled = false;
             btnTestEnvir.Enabled = false;
+
+            string fileName = PublicClass.ExamImagesDir + "bg_exam.jpg";
+            if (File.Exists(fileName)) this.pnlBackground.BackgroundImage = Image.FromFile(fileName);
         }
         /// <summary>
         /// 针对当前所选题库检查所有考试环境
@@ -239,14 +242,14 @@ namespace ComputerExam.StepWizard
             #endregion
 
             //考试时如需要指定账套起始日期（用友财务类科目），进行系统日期检测
-            //CheckSystemTime();
+            CheckSystemTime();
             //检查环境
             CheckEnvironment();
 
             #region 继续-退出考试
             if (!bAllCheckPassed)
             {
-                sbCheckResult.AppendFormat("\n\n如果要继续考试请按[确认]；退出考试请按[取消]。");
+                sbCheckResult.AppendFormat("\n\n如果要继续考试（会影响答题和评分）请按[确认]；退出考试请按[取消]。");
                 DialogResult result = PublicClass.ShowMessageOKCancel(sbCheckResult.ToString());
                 if (result == DialogResult.OK)
                 {

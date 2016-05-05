@@ -20,9 +20,9 @@ namespace ComputerExam.BusicWork
         SqliteKey3 key3 = new SqliteKey3();
         PublicClass publicClass = new PublicClass();
         B_SubjectProp bSubjectProp = new B_SubjectProp();
-        List<M_ExerciseSubjectDetail> listSubject = new List<M_ExerciseSubjectDetail>();
-        List<M_ExerciseFile> listFile = new List<M_ExerciseFile>();
-
+        BindingList<M_ExerciseSubjectDetail> listSubject = new BindingList<M_ExerciseSubjectDetail>();
+        BindingList<M_ExerciseFile> listFile = new BindingList<M_ExerciseFile>();
+        
         /// <summary>
         /// 加载题库文件
         /// </summary>
@@ -51,24 +51,15 @@ namespace ComputerExam.BusicWork
                         listSubject.Add(subject);
                     }
                 }
-                DataBindTopicDB();
+
+                dgvTopicDB.AutoGenerateColumns = false;
+                dgvTopicDB.DataSource = listSubject;
             }
             catch (Exception ex)
             {
                 LogHelper.WriteLog(typeof(frmExercise), ex.Message);
             }
         }
-        /// <summary>
-        /// 绑定题库列表
-        /// </summary>
-        private void DataBindTopicDB()
-        {
-            dgvTopicDB.AutoGenerateColumns = false;
-            dgvTopicDB.DataSource = null;
-            dgvTopicDB.DataSource = listSubject;
-        }
-        
-
         /// <summary>
         /// 加载账套文件
         /// </summary>
@@ -95,7 +86,6 @@ namespace ComputerExam.BusicWork
                 }
 
                 dgvFiles.AutoGenerateColumns = false;
-                dgvFiles.DataSource = null;
                 dgvFiles.DataSource = listFile;
             }
             catch (Exception ex)

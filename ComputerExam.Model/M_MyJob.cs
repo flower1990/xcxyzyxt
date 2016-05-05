@@ -11,7 +11,7 @@ namespace ComputerExam.Model
         /// <summary>
         /// 作业编号
         /// </summary>
-        public string HWID { get; set; }
+        //public string HWID { get; set; }
         /// <summary>
         /// 科目编号
         /// </summary>

@@ -30,11 +30,14 @@ namespace ComputerExam.ExamPaper
             this.SetStyle(ControlStyles.DoubleBuffer, true);
             this.SetStyle(ControlStyles.UserPaint, true);
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+
+            string fileName = PublicClass.ExamImagesDir + "bg_loading.jpg";
+            if (File.Exists(fileName)) this.pnlBackground.BackgroundImage = Image.FromFile(fileName);
         }
 
         public void ShowMessage(string message)
         {
-            PublicClass.ShowMessageOk(message);
+            MessageBox.Show(this, message, "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public frmHandPager()

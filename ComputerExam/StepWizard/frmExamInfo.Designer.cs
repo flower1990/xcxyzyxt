@@ -34,14 +34,14 @@
             this.tmrLoadPaper = new System.Windows.Forms.Timer(this.components);
             this.tmrInitPaper = new System.Windows.Forms.Timer(this.components);
             this.tmrMessage = new System.Windows.Forms.Timer(this.components);
-            this.backgroundPanel1 = new ComputerExam.Common.BackgroundPanel();
+            this.pnlBackground = new ComputerExam.Common.BackgroundPanel();
             this.txtMessage = new ComputerExam.CustomControl.CustomRichTextBox();
             this.btnExitSystem = new System.Windows.Forms.Button();
             this.btnReturnLogin = new System.Windows.Forms.Button();
             this.btnNextStep = new System.Windows.Forms.Button();
             this.tmrNewJob = new System.Windows.Forms.Timer(this.components);
             this.tmrLastJob = new System.Windows.Forms.Timer(this.components);
-            this.backgroundPanel1.SuspendLayout();
+            this.pnlBackground.SuspendLayout();
             this.SuspendLayout();
             // 
             // tmrCreatePaper
@@ -61,18 +61,18 @@
             this.tmrMessage.Interval = 2000;
             this.tmrMessage.Tick += new System.EventHandler(this.tmrMessage_Tick);
             // 
-            // backgroundPanel1
+            // pnlBackground
             // 
-            this.backgroundPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.backgroundPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backgroundPanel1.BackgroundImage")));
-            this.backgroundPanel1.Controls.Add(this.txtMessage);
-            this.backgroundPanel1.Controls.Add(this.btnExitSystem);
-            this.backgroundPanel1.Controls.Add(this.btnReturnLogin);
-            this.backgroundPanel1.Controls.Add(this.btnNextStep);
-            this.backgroundPanel1.Location = new System.Drawing.Point(12, 6);
-            this.backgroundPanel1.Name = "backgroundPanel1";
-            this.backgroundPanel1.Size = new System.Drawing.Size(700, 400);
-            this.backgroundPanel1.TabIndex = 1;
+            this.pnlBackground.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlBackground.BackgroundImage = global::ComputerExam.Properties.Resources.bg_info;
+            this.pnlBackground.Controls.Add(this.txtMessage);
+            this.pnlBackground.Controls.Add(this.btnExitSystem);
+            this.pnlBackground.Controls.Add(this.btnReturnLogin);
+            this.pnlBackground.Controls.Add(this.btnNextStep);
+            this.pnlBackground.Location = new System.Drawing.Point(12, 6);
+            this.pnlBackground.Name = "pnlBackground";
+            this.pnlBackground.Size = new System.Drawing.Size(700, 400);
+            this.pnlBackground.TabIndex = 1;
             // 
             // txtMessage
             // 
@@ -138,7 +138,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(724, 412);
             this.ControlBox = false;
-            this.Controls.Add(this.backgroundPanel1);
+            this.Controls.Add(this.pnlBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -147,7 +147,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "考试登陆向导";
             this.Load += new System.EventHandler(this.frmExamInfo_Load);
-            this.backgroundPanel1.ResumeLayout(false);
+            this.pnlBackground.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -161,7 +161,7 @@
         private System.Windows.Forms.Timer tmrLoadPaper;
         private System.Windows.Forms.Timer tmrInitPaper;
         private System.Windows.Forms.Timer tmrMessage;
-        private Common.BackgroundPanel backgroundPanel1;
+        private Common.BackgroundPanel pnlBackground;
         private CustomControl.CustomRichTextBox txtMessage;
         private System.Windows.Forms.Timer tmrNewJob;
         private System.Windows.Forms.Timer tmrLastJob;

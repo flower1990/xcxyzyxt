@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlBackground = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.picExam = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -40,28 +40,29 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtPassord = new System.Windows.Forms.TextBox();
             this.txtAccount = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
+            this.pnlBackground.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlBackground
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Controls.Add(this.cbAccount);
-            this.panel1.Controls.Add(this.lblSetService);
-            this.panel1.Controls.Add(this.btnLogin);
-            this.panel1.Controls.Add(this.txtPassord);
-            this.panel1.Controls.Add(this.txtAccount);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(500, 289);
-            this.panel1.TabIndex = 5;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.pnlBackground.BackColor = System.Drawing.Color.Transparent;
+            this.pnlBackground.BackgroundImage = global::ComputerExam.Properties.Resources.bg_login;
+            this.pnlBackground.Controls.Add(this.panel4);
+            this.pnlBackground.Controls.Add(this.btnExit);
+            this.pnlBackground.Controls.Add(this.cbAccount);
+            this.pnlBackground.Controls.Add(this.lblSetService);
+            this.pnlBackground.Controls.Add(this.btnLogin);
+            this.pnlBackground.Controls.Add(this.txtPassord);
+            this.pnlBackground.Controls.Add(this.txtAccount);
+            this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBackground.Location = new System.Drawing.Point(0, 0);
+            this.pnlBackground.Name = "pnlBackground";
+            this.pnlBackground.Size = new System.Drawing.Size(500, 289);
+            this.pnlBackground.TabIndex = 5;
+            this.pnlBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // panel4
             // 
@@ -185,18 +186,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::ComputerExam.Properties.Resources.bg_login;
             this.ClientSize = new System.Drawing.Size(500, 289);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmLogin";
+            this.Text = "用户登录";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmLogin_MouseDown);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlBackground.ResumeLayout(false);
+            this.pnlBackground.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExam)).EndInit();
@@ -207,7 +208,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlBackground;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox picExam;
         private System.Windows.Forms.Label lblTitle;

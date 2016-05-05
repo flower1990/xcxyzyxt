@@ -78,6 +78,10 @@ namespace ComputerExam.Util
         /// </summary>
         public static string ExamSysDirGradeDll;
         /// <summary>
+        /// 图片目录
+        /// </summary>
+        public static string ExamImagesDir;
+        /// <summary>
         /// 题库目录
         /// </summary>
         public static string TopicDBFileName_SDB;
@@ -397,6 +401,7 @@ namespace ComputerExam.Util
                 ExamSysDir = Application.StartupPath + @"\SowerTestClient\";
                 PaperDownloadDir = ExamSysDir + @"Paper\Download\";
                 ExamSysDirGradeDll = ExamSysDir + @"System\GradeDll\";
+                ExamImagesDir = Application.StartupPath + @"\Common\Images\";
 
                 StudentDirGradeDll = StudentDir + @"\GradeDll\";
                 StudentDirAccount = StudentDir + @"\Account\";
@@ -1525,7 +1530,7 @@ namespace ComputerExam.Util
             Process[] process = Process.GetProcesses();
 
             slTaskList.Add("Maxthon");   //Brower.遨游
-            //slTaskList.Add("firefox");   //Brower.火狐
+            slTaskList.Add("firefox");   //Brower.火狐
             slTaskList.Add("TTraveler"); //Brower.腾讯TT
             slTaskList.Add("opera");     //Brower.Oprea
             slTaskList.Add("navigator"); //Brower.网景

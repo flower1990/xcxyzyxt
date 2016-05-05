@@ -14,7 +14,7 @@ namespace ComputerExam.DAL
         {
             string sql = "select * from T_题型 where 是否抽取 <> '0'";
             List<M_TopicType> topicType = new List<M_TopicType>();
-
+            SQLiteHelper.InitialConnection(PublicClass.TopicDBFileName_SDBT);
             using (SQLiteDataReader reader = SQLiteHelper.ExecuteReader(sql))
             {
                 while (reader.Read())

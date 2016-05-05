@@ -27,13 +27,13 @@ namespace ComputerExam.ExamPaper
                 }
                 else
                 {
-                    btnOk.Text = "退出系统";
+                    btnOk.Text = "返回主窗体";
                 }
             }
 
             if (PublicClass.JobType == JobType.ShiJuan)
             {
-                btnOk.Text = "退出系统";
+                btnOk.Text = "返回主窗体";
             }
         }
 

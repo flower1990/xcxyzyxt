@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -34,6 +35,9 @@ namespace ComputerExam.StepWizard
             this.SetStyle(ControlStyles.DoubleBuffer, true);
             this.SetStyle(ControlStyles.UserPaint, true);
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+
+            string fileName = PublicClass.ExamImagesDir + "bg_exam.jpg";
+            if (File.Exists(fileName)) this.pnlBackground.BackgroundImage = Image.FromFile(fileName);
 
             this.MaximumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
             this.WindowState = FormWindowState.Maximized;

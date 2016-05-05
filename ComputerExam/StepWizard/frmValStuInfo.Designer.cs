@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmValStuInfo));
-            this.backgroundPanel1 = new ComputerExam.Common.BackgroundPanel();
+            this.pnlBackground = new ComputerExam.Common.BackgroundPanel();
             this.btnExitSystem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLastStep = new System.Windows.Forms.Button();
@@ -44,33 +44,33 @@
             this.lblExamSubject = new System.Windows.Forms.Label();
             this.lblTicketNumber = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.backgroundPanel1.SuspendLayout();
+            this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // backgroundPanel1
+            // pnlBackground
             // 
-            this.backgroundPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.backgroundPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.backgroundPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backgroundPanel1.BackgroundImage")));
-            this.backgroundPanel1.Controls.Add(this.btnExitSystem);
-            this.backgroundPanel1.Controls.Add(this.label1);
-            this.backgroundPanel1.Controls.Add(this.btnLastStep);
-            this.backgroundPanel1.Controls.Add(this.pictureBox1);
-            this.backgroundPanel1.Controls.Add(this.btnNextStep);
-            this.backgroundPanel1.Controls.Add(this.lblError);
-            this.backgroundPanel1.Controls.Add(this.label9);
-            this.backgroundPanel1.Controls.Add(this.lblExamMode);
-            this.backgroundPanel1.Controls.Add(this.lblStuName);
-            this.backgroundPanel1.Controls.Add(this.label3);
-            this.backgroundPanel1.Controls.Add(this.label7);
-            this.backgroundPanel1.Controls.Add(this.lblExamSubject);
-            this.backgroundPanel1.Controls.Add(this.lblTicketNumber);
-            this.backgroundPanel1.Controls.Add(this.label5);
-            this.backgroundPanel1.Location = new System.Drawing.Point(12, 6);
-            this.backgroundPanel1.Name = "backgroundPanel1";
-            this.backgroundPanel1.Size = new System.Drawing.Size(700, 400);
-            this.backgroundPanel1.TabIndex = 1;
+            this.pnlBackground.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlBackground.BackColor = System.Drawing.Color.Transparent;
+            this.pnlBackground.BackgroundImage = global::ComputerExam.Properties.Resources.bg_exam;
+            this.pnlBackground.Controls.Add(this.btnExitSystem);
+            this.pnlBackground.Controls.Add(this.label1);
+            this.pnlBackground.Controls.Add(this.btnLastStep);
+            this.pnlBackground.Controls.Add(this.pictureBox1);
+            this.pnlBackground.Controls.Add(this.btnNextStep);
+            this.pnlBackground.Controls.Add(this.lblError);
+            this.pnlBackground.Controls.Add(this.label9);
+            this.pnlBackground.Controls.Add(this.lblExamMode);
+            this.pnlBackground.Controls.Add(this.lblStuName);
+            this.pnlBackground.Controls.Add(this.label3);
+            this.pnlBackground.Controls.Add(this.label7);
+            this.pnlBackground.Controls.Add(this.lblExamSubject);
+            this.pnlBackground.Controls.Add(this.lblTicketNumber);
+            this.pnlBackground.Controls.Add(this.label5);
+            this.pnlBackground.Location = new System.Drawing.Point(12, 6);
+            this.pnlBackground.Name = "pnlBackground";
+            this.pnlBackground.Size = new System.Drawing.Size(700, 400);
+            this.pnlBackground.TabIndex = 1;
             // 
             // btnExitSystem
             // 
@@ -220,7 +220,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(724, 412);
             this.ControlBox = false;
-            this.Controls.Add(this.backgroundPanel1);
+            this.Controls.Add(this.pnlBackground);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -230,8 +230,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "考试登陆向导";
             this.Load += new System.EventHandler(this.frmValStuInfo_Load);
-            this.backgroundPanel1.ResumeLayout(false);
-            this.backgroundPanel1.PerformLayout();
+            this.pnlBackground.ResumeLayout(false);
+            this.pnlBackground.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -253,6 +253,6 @@
         private System.Windows.Forms.Button btnExitSystem;
         private System.Windows.Forms.Button btnLastStep;
         private System.Windows.Forms.Button btnNextStep;
-        private Common.BackgroundPanel backgroundPanel1;
+        private Common.BackgroundPanel pnlBackground;
     }
 }

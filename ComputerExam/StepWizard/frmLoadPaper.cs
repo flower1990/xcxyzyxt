@@ -78,6 +78,9 @@ namespace ComputerExam.StepWizard
             this.SetStyle(ControlStyles.DoubleBuffer, true);
             this.SetStyle(ControlStyles.UserPaint, true);
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+
+            string fileName = PublicClass.ExamImagesDir + "bg_loading.jpg";
+            if (File.Exists(fileName)) this.pnlBackground.BackgroundImage = Image.FromFile(fileName);
         }
         /// <summary>
         /// 初始化开始方式

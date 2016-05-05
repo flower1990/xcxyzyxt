@@ -49,7 +49,7 @@ namespace ComputerExam.BusicWork
                     if (item.Extension.ToLower() == ".sdbt")
                     {
                         string subjectId = Path.GetFileNameWithoutExtension(item.Name);
-                        int index = subjectId.IndexOf('_') + 1;
+                        int index = subjectId.LastIndexOf('_') + 1;
                         string subjectName = subjectId.Substring(index, subjectId.Length - index);
 
                         M_ExerciseSubject subject = new M_ExerciseSubject();
@@ -129,10 +129,11 @@ namespace ComputerExam.BusicWork
         {
             string paperPath = PublicClass.StudentDir + "\\Data\\ExamRec.dat";
             publicClass.InitSystemProp();
-            
+
             if (File.Exists(paperPath))
             {
                 InitialPaperInfo();
+                LogHelper.WriteLog(typeof(frmExercise), "完成初始化试卷信息");
                 int presetPaperID = Convert.ToInt32(lbTaoJuan.SelectedValue);
 
                 #region 正式考试
@@ -248,9 +249,16 @@ namespace ComputerExam.BusicWork
 
         private void frmExercise_Load(object sender, EventArgs e)
         {
-            LoadSubject();
-            cboSubject.SelectedIndex = 0;
-            cboSubject.SelectedIndexChanged += cboSubject_SelectedIndexChanged;
+            try
+            {
+                LoadSubject();
+                cboSubject.SelectedIndex = 0;
+                cboSubject.SelectedIndexChanged += cboSubject_SelectedIndexChanged;
+            }
+            catch (Exception ex)
+            {
+                LogHelper.WriteLog(typeof(frmExercise), ex.Message);
+            }
         }
 
         private void cboSubject_SelectedIndexChanged(object sender, EventArgs e)
@@ -284,70 +292,94 @@ namespace ComputerExam.BusicWork
                         lbTaoJuan.SelectedIndex = 0;
                     }
                 }
+                PublicClass.TopicDBFileName_SDBT = TopicDBFileName_SDBT;
             }
             catch (Exception ex)
             {
-                PublicClass.ShowMessageOk(ex.Message);
+                LogHelper.WriteLog(typeof(frmExercise), ex.Message);
             }
         }
 
         private void btnZuJuan_Click(object sender, EventArgs e)
         {
-            if (cboSubject.SelectedIndex == 0)
+            try
             {
-                PublicClass.ShowMessageOk("请选择一门考试科目，在进行后续操作。");
-                return;
+                if (cboSubject.SelectedIndex == 0)
+                {
+                    PublicClass.ShowMessageOk("请选择一门考试科目，在进行后续操作。");
+                    return;
+                }
+
+                PublicClass.SubjectName = cboSubject.SelectedValue.ToString();
+                PublicClass.JobType = JobType.TiKu;
+
+                InitialStudentDir();
+                LogHelper.WriteLog(typeof(frmExercise), "完成初始化学生目录");
+
+                InitialSubjectProp();
+                LogHelper.WriteLog(typeof(frmExercise), "完成初始化科目属性");
+
+                InitialKaoShiFangShi();
+                LogHelper.WriteLog(typeof(frmExercise), "完成初始化开始方式");
+
+                PublicClass.oSubjectProp.PresetPaperID = Convert.ToInt32(lbTaoJuan.SelectedValue);
+                frmBusicWorkMain busicWorkMain = this.ParentForm as frmBusicWorkMain;
+
+                //模拟练习
+                if (rdoExercise.Checked)
+                {
+                    PublicClass.oSubjectProp.ExamMode = "1";
+                    PublicClass.SowerExamPlugn.SetParaValue(PublicClass.StudentDir, "题库信息", "考试模式", "1");
+
+                    frmExamInfo examInfo = new frmExamInfo();
+                    examInfo.Show();
+                    busicWorkMain.Hide();
+                }
+                //正式考试
+                if (rdoExam.Checked)
+                {
+                    PublicClass.oSubjectProp.ExamMode = "2";
+                    PublicClass.SowerExamPlugn.SetParaValue(PublicClass.StudentDir, "题库信息", "考试模式", "2");
+
+                    frmExamSubject examSubject = new frmExamSubject();
+                    CommonUtil.subjectIndex = cboSubject.SelectedIndex;
+                    examSubject.Show();
+                    busicWorkMain.Hide();
+                }
             }
-
-            PublicClass.SubjectName = cboSubject.SelectedValue.ToString();
-            PublicClass.JobType = JobType.TiKu;
-
-            InitialStudentDir();
-
-            InitialSubjectProp();
-
-            InitialKaoShiFangShi();
-
-            PublicClass.oSubjectProp.PresetPaperID = Convert.ToInt32(lbTaoJuan.SelectedValue);
-
-            frmBusicWorkMain busicWorkMain = this.ParentForm as frmBusicWorkMain;
-            
-
-            //模拟练习
-            if (rdoExercise.Checked)
+            catch (Exception ex)
             {
-                PublicClass.oSubjectProp.ExamMode = "1";
-                PublicClass.SowerExamPlugn.SetParaValue(PublicClass.StudentDir, "题库信息", "考试模式", "1");
-
-                frmExamInfo examInfo = new frmExamInfo();
-                examInfo.Show();
-                busicWorkMain.Hide();
-            }
-            //正式考试
-            if (rdoExam.Checked)
-            {
-                PublicClass.oSubjectProp.ExamMode = "2";
-                PublicClass.SowerExamPlugn.SetParaValue(PublicClass.StudentDir, "题库信息", "考试模式", "2");
-
-                frmExamSubject examSubject = new frmExamSubject();
-                CommonUtil.subjectIndex = cboSubject.SelectedIndex;
-                examSubject.Show();
-                busicWorkMain.Hide();
+                LogHelper.WriteLog(typeof(frmExercise), ex.Message);
+                PublicClass.ShowErrorMessageOk(ex.Message);
             }
         }
 
         private void btnAddDb_Click(object sender, EventArgs e)
         {
-            frmAddTopicDB addTopicDB = new frmAddTopicDB();
-            addTopicDB.ShowDialog();
-            RefreshSubject();
+            try
+            {
+                frmAddTopicDB addTopicDB = new frmAddTopicDB();
+                addTopicDB.ShowDialog();
+                RefreshSubject();
+            }
+            catch (Exception ex)
+            {
+                LogHelper.WriteLog(typeof(frmExercise), ex.Message);
+            }
         }
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
-            frmDownTopicDB downTopicDB = new frmDownTopicDB();
-            downTopicDB.ShowDialog();
-            RefreshSubject();
+            try
+            {
+                frmDownTopicDB downTopicDB = new frmDownTopicDB();
+                downTopicDB.ShowDialog();
+                RefreshSubject();
+            }
+            catch (Exception ex)
+            {
+                LogHelper.WriteLog(typeof(frmExercise), ex.Message);
+            }
         }
     }
 }

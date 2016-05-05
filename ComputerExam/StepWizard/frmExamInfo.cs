@@ -213,6 +213,9 @@ namespace ComputerExam.StepWizard
             this.SetStyle(ControlStyles.UserPaint, true);
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             btnNextStep.Enabled = false;
+
+            string fileName = PublicClass.ExamImagesDir + "bg_info.jpg";
+            if (File.Exists(fileName)) this.pnlBackground.BackgroundImage = Image.FromFile(fileName);
         }
         /// <summary>
         /// 为继续考试写入信息
@@ -435,7 +438,7 @@ namespace ComputerExam.StepWizard
             {
                 if (!bAllCheckPassed)
                 {
-                    sbCheckResult.AppendFormat("\n\n如果要继续考试请按[确认]；退出考试请按[取消]。");
+                    sbCheckResult.AppendFormat("\n\n如果要继续考试（会影响答题和评分）请按[确定]；退出考试请按[取消]。");
                     DialogResult result = PublicClass.ShowMessageOKCancel(sbCheckResult.ToString());
                     if (result == DialogResult.OK)
                     {
@@ -463,10 +466,21 @@ namespace ComputerExam.StepWizard
             {
                 if (!bAllCheckPassed)
                 {
-                    sbCheckResult.AppendFormat("\n请安装考试所需环境，按[确认]退出考试系统。");
-                    PublicClass.ShowMessageOk(sbCheckResult.ToString());
-                    //Application.Exit();
-                    bAllCheckPassed = true;
+                    sbCheckResult.AppendFormat("\n\n如果要继续考试（会影响答题和评分）请按[确定]；退出考试请按[取消]。");
+                    DialogResult result = PublicClass.ShowMessageOKCancel(sbCheckResult.ToString());
+                    if (result == DialogResult.OK)
+                    {
+                        bAllCheckPassed = true;
+                    }
+                    else
+                    {
+                        //删除考生试卷
+                        PublicClass.SowerExamPlugn.foDeleteFolder(PublicClass.StudentDir);
+                        frmBusicWorkMain busicWorkMain = new frmBusicWorkMain();
+                        busicWorkMain.Show();
+                        this.Close();
+                        return false;
+                    }
                 }
                 else
                 {

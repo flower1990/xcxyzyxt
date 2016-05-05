@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmExamSubject));
             this.tmrCheckEnvironment = new System.Windows.Forms.Timer(this.components);
-            this.backgroundPanel1 = new ComputerExam.Common.BackgroundPanel();
+            this.pnlBackground = new ComputerExam.Common.BackgroundPanel();
             this.txtTestResult = new ComputerExam.CustomControl.CustomRichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExitSystem = new System.Windows.Forms.Button();
@@ -40,7 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnTestEnvir = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
-            this.backgroundPanel1.SuspendLayout();
+            this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,23 +49,23 @@
             this.tmrCheckEnvironment.Interval = 1000;
             this.tmrCheckEnvironment.Tick += new System.EventHandler(this.tmrCheckEnvironment_Tick);
             // 
-            // backgroundPanel1
+            // pnlBackground
             // 
-            this.backgroundPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.backgroundPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.backgroundPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backgroundPanel1.BackgroundImage")));
-            this.backgroundPanel1.Controls.Add(this.txtTestResult);
-            this.backgroundPanel1.Controls.Add(this.label1);
-            this.backgroundPanel1.Controls.Add(this.btnExitSystem);
-            this.backgroundPanel1.Controls.Add(this.cboSubject);
-            this.backgroundPanel1.Controls.Add(this.btnNextStep);
-            this.backgroundPanel1.Controls.Add(this.pictureBox1);
-            this.backgroundPanel1.Controls.Add(this.btnTestEnvir);
-            this.backgroundPanel1.Controls.Add(this.lblError);
-            this.backgroundPanel1.Location = new System.Drawing.Point(12, 6);
-            this.backgroundPanel1.Name = "backgroundPanel1";
-            this.backgroundPanel1.Size = new System.Drawing.Size(700, 400);
-            this.backgroundPanel1.TabIndex = 1;
+            this.pnlBackground.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlBackground.BackColor = System.Drawing.Color.Transparent;
+            this.pnlBackground.BackgroundImage = global::ComputerExam.Properties.Resources.bg_exam;
+            this.pnlBackground.Controls.Add(this.txtTestResult);
+            this.pnlBackground.Controls.Add(this.label1);
+            this.pnlBackground.Controls.Add(this.btnExitSystem);
+            this.pnlBackground.Controls.Add(this.cboSubject);
+            this.pnlBackground.Controls.Add(this.btnNextStep);
+            this.pnlBackground.Controls.Add(this.pictureBox1);
+            this.pnlBackground.Controls.Add(this.btnTestEnvir);
+            this.pnlBackground.Controls.Add(this.lblError);
+            this.pnlBackground.Location = new System.Drawing.Point(12, 6);
+            this.pnlBackground.Name = "pnlBackground";
+            this.pnlBackground.Size = new System.Drawing.Size(700, 400);
+            this.pnlBackground.TabIndex = 1;
             // 
             // txtTestResult
             // 
@@ -163,7 +163,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(724, 412);
             this.ControlBox = false;
-            this.Controls.Add(this.backgroundPanel1);
+            this.Controls.Add(this.pnlBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -172,8 +172,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "考试登陆向导";
             this.Load += new System.EventHandler(this.frmExamSubject_Load);
-            this.backgroundPanel1.ResumeLayout(false);
-            this.backgroundPanel1.PerformLayout();
+            this.pnlBackground.ResumeLayout(false);
+            this.pnlBackground.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -188,7 +188,7 @@
         private System.Windows.Forms.Button btnExitSystem;
         private System.Windows.Forms.Button btnNextStep;
         private System.Windows.Forms.Button btnTestEnvir;
-        private Common.BackgroundPanel backgroundPanel1;
+        private Common.BackgroundPanel pnlBackground;
         private CustomControl.CustomRichTextBox txtTestResult;
         private System.Windows.Forms.Timer tmrCheckEnvironment;
     }

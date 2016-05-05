@@ -31,27 +31,27 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHandPager));
             this.tmrDelayClose = new System.Windows.Forms.Timer(this.components);
-            this.backgroundPanel1 = new ComputerExam.Common.BackgroundPanel();
+            this.pnlBackground = new ComputerExam.Common.BackgroundPanel();
             this.lblHint = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.backgroundPanel1.SuspendLayout();
+            this.pnlBackground.SuspendLayout();
             this.SuspendLayout();
             // 
             // tmrDelayClose
             // 
             this.tmrDelayClose.Tick += new System.EventHandler(this.tmrDelayClose_Tick);
             // 
-            // backgroundPanel1
+            // pnlBackground
             // 
-            this.backgroundPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.backgroundPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.backgroundPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backgroundPanel1.BackgroundImage")));
-            this.backgroundPanel1.Controls.Add(this.lblHint);
-            this.backgroundPanel1.Controls.Add(this.lblTitle);
-            this.backgroundPanel1.Location = new System.Drawing.Point(12, 6);
-            this.backgroundPanel1.Name = "backgroundPanel1";
-            this.backgroundPanel1.Size = new System.Drawing.Size(700, 400);
-            this.backgroundPanel1.TabIndex = 6;
+            this.pnlBackground.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlBackground.BackColor = System.Drawing.Color.Transparent;
+            this.pnlBackground.BackgroundImage = global::ComputerExam.Properties.Resources.bg_loading;
+            this.pnlBackground.Controls.Add(this.lblHint);
+            this.pnlBackground.Controls.Add(this.lblTitle);
+            this.pnlBackground.Location = new System.Drawing.Point(12, 6);
+            this.pnlBackground.Name = "pnlBackground";
+            this.pnlBackground.Size = new System.Drawing.Size(700, 400);
+            this.pnlBackground.TabIndex = 6;
             // 
             // lblHint
             // 
@@ -81,7 +81,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(724, 412);
             this.ControlBox = false;
-            this.Controls.Add(this.backgroundPanel1);
+            this.Controls.Add(this.pnlBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -91,15 +91,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "考试登陆向导";
             this.Load += new System.EventHandler(this.frmExamInfo_Load);
-            this.backgroundPanel1.ResumeLayout(false);
-            this.backgroundPanel1.PerformLayout();
+            this.pnlBackground.ResumeLayout(false);
+            this.pnlBackground.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Common.BackgroundPanel backgroundPanel1;
+        private Common.BackgroundPanel pnlBackground;
         public System.Windows.Forms.Label lblTitle;
         public System.Windows.Forms.Label lblHint;
         private System.Windows.Forms.Timer tmrDelayClose;
